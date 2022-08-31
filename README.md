@@ -21,11 +21,11 @@ Project Description:
 Meteorological sensor. This sensor
 measures the ambient temperature and can detect
 whether it is raining or not. We simulate the sensor using SensorRestClient.
-Getting data from the sensor and saving it to the database using the SensorRestServer server.
+Getting data from the sensor and saving it to the database using the SensorRestServer.
 
 Technologies used:
 - Java
 - Jackson
 - Maven
-- Sleep mode
+- Hibernate
 - Spring (Core, MVC, Validation, Data JPA, Download, REST)
