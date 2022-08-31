@@ -28,4 +28,4 @@ Technologies used:
 - Jackson
 - Maven
 - Hibernate
-- Spring (Core, MVC, Validation, Data JPA, Download, REST)
+- Spring (Core, MVC, Validation, Data JPA, Boot, REST)
