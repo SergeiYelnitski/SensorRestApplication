@@ -1,5 +1,10 @@
 package by.yelnitski.sensor.rest.server.models;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -9,6 +14,10 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "Measurement")
+@AllArgsConstructor
+@NoArgsConstructor
+@Setter
+@Getter
 public class Measurement {
     @Id
     @Column(name = "id")
@@ -23,7 +32,7 @@ public class Measurement {
 
     @Column(name = "raining")
     @NotNull
-    private Boolean raining;
+    private Boolean isRaining;
 
     @Column(name = "measurement_date_time")
     @NotNull
@@ -33,45 +42,4 @@ public class Measurement {
     @ManyToOne
     @JoinColumn(name = "sensor", referencedColumnName = "name")
     private Sensor sensor;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Double getValue() {
-        return value;
-    }
-
-    public void setValue(Double value) {
-        this.value = value;
-    }
-
-    // Jackson смотрит на название геттера, отсекает is и отсавляет название поля
-    public Boolean isRaining() {
-        return raining;
-    }
-
-    public void setRaining(Boolean raining) {
-        this.raining = raining;
-    }
-
-    public LocalDateTime getMeasurementDateTime() {
-        return measurementDateTime;
-    }
-
-    public void setMeasurementDateTime(LocalDateTime measurementDateTime) {
-        this.measurementDateTime = measurementDateTime;
-    }
-
-    public Sensor getSensor() {
-        return sensor;
-    }
-
-    public void setSensor(Sensor sensor) {
-        this.sensor = sensor;
-    }
 }

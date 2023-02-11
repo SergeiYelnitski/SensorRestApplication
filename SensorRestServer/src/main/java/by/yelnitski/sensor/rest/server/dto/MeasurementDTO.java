@@ -1,10 +1,18 @@
 package by.yelnitski.sensor.rest.server.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
-
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class MeasurementDTO {
     @NotNull
     @Min(-100)
@@ -16,28 +24,4 @@ public class MeasurementDTO {
 
     @NotNull
     private SensorDTO sensor;
-
-    public Double getValue() {
-        return value;
-    }
-
-    public void setValue(Double value) {
-        this.value = value;
-    }
-
-    public Boolean getRaining() {
-        return isRaining;
-    }
-
-    public void setRaining(Boolean raining) {
-        isRaining = raining;
-    }
-
-    public SensorDTO getSensor() {
-        return sensor;
-    }
-
-    public void setSensor(SensorDTO sensor) {
-        this.sensor = sensor;
-    }
 }
